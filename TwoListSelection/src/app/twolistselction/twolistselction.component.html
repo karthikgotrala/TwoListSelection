@@ -1,17 +1,21 @@
 <div class="twolistselection">
     <div class="row">
         <div class="col-xs-5 col-sm-5">
-            <app-filterlist></app-filterlist>
+            <div class="left">
+                <app-filterlist [listContent]="leftContent"></app-filterlist>
+            </div>
         </div>
         <div class="col-xs-2 col-sm-2">
-
-            <button type="button" class="btn btn-primary">
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </button>
-
+            <div class="center">
+                <button type="button" class="btn btn-primary">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
         <div class="col-xs-5 col-sm-5">
-            <app-filterlist></app-filterlist>
+            <div class="right">
+                <app-filterlist [listContent]="rightContent"></app-filterlist>
+            </div>
         </div>
     </div>
 </div>

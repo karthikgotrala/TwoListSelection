@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-filterlist',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filterlist.component.css']
 })
 export class FilterlistComponent implements OnInit {
-
+ @Input() listContent:{label:string,listItems:{code:string;label:string;}[]};
+    
   constructor() { }
 
   ngOnInit() {
