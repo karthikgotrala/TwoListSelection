@@ -6,4 +6,12 @@
 .keyword-search {
     position: relative;
     top: 0px;
+    margin-top: 3px;
+}
+.twolistselection ul li:hover {
+    background-color: #ddd;
+}
+.twolistselection ul li label:hover {
+    font-weight: 700;
+    cursor: pointer;
 }
