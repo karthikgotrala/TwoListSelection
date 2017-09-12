@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
 
 @Component({
   selector: 'app-filterlist',
@@ -7,10 +7,18 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class FilterlistComponent implements OnInit {
  @Input() listContent:{label:string,listItems:{code:string;label:string;}[]};
+
+ search:string;
+
+  @Output() onKeyWordChange = new EventEmitter<Object>();
     
-  constructor() { }
+    constructor() { }
 
   ngOnInit() {
   }
+    
+    onChange($event){
+        this.onKeyWordChange.emit(this.search);
+    }
 
 }

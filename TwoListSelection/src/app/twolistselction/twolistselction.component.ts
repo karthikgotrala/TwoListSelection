@@ -22,13 +22,15 @@ export class TwolistselctionComponent implements OnInit {
          {"code":"11","label":"Drpping Springs"},
          {"code":"12","label":"New Braunfels"},
          {"code":"13","label":"Bastrop"},
-         
-         
-         
-         
      ]
      
  }
+
+    rightContent={
+        label:"Selected",
+        listItems:[]
+        
+    }
   constructor() { }
 
   ngOnInit() {

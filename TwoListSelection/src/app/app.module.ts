@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TwolistselctionComponent } from './twolistselction/twolistselction.component';
 import { FilterlistComponent } from './filterlist/filterlist.component';
+import { KeywordsearchPipe } from './pipes/keywordsearch.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TwolistselctionComponent,
-    FilterlistComponent
+    FilterlistComponent,
+    KeywordsearchPipe
   ],
   imports: [
     BrowserModule,

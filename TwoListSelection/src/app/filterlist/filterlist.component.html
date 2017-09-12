@@ -8,11 +8,11 @@
     </div>
     <div class="form-group form-group-sm">
         <label class="sr-only col-form-label">Search</label>
-        <input type="text" class="form-control keyword-search" />
+        <input type="text" class="form-control keyword-search" [(ngModel)]="search" (keyup)=onChange()/>
     </div>
     <div class="card-block">
 
-        <ul class="list-inline" *ngFor="let listItem of listContent.listItems">
+        <ul class="list-inline" *ngFor="let listItem of listContent.listItems |keywordsearch:'label':search">
             <li class="list-group-item">
                 <label for="{{listItem.code}}_checkbox">
                     <input type="checkbox" id="{{listItem.code}}_checkbox" name="{{listItem.code}}_checkbox" /> {{listItem.label}}
