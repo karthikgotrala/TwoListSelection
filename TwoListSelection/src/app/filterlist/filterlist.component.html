@@ -12,8 +12,8 @@
     </div>
     <div class="card-block">
 
-        <ul class="list-inline" *ngFor="let listItem of listContent.listItems |keywordsearch:'label':search">
-            <li class="list-group-item">
+        <ul class="list-inline">
+            <li class="list-group-item" *ngFor="let listItem of listContent.listItems |keywordsearch:'label':search">
                 <label for="{{listItem.code}}_checkbox">
                     <input type="checkbox" id="{{listItem.code}}_checkbox" name="{{listItem.code}}_checkbox" /> {{listItem.label}}
                 </label>
