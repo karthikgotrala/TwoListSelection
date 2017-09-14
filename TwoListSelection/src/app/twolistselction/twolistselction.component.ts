@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TwolistselctionComponent implements OnInit {
  leftContent = {
      'label'  :  'Available',
+     'componentId':'Available',
      'listItems' : [
          { 'code' : '1', 'label' : 'Austin' } ,
          { 'code' : '2', 'label' : 'Round Rock' } ,
@@ -25,14 +26,32 @@ export class TwolistselctionComponent implements OnInit {
      ]
  };
 
+    leftSelectedItems=[];
+    
+
+
     rightContent = {
         'label' : 'Selected',
+        'componentId':'Selected',
         'listItems' : []
     };
+    
   constructor() { }
 
   ngOnInit() {
   }
+    
+    
+    
+    onSelectedItem(selectedItem:{"componentId":string,"item":{"label":string,"code":string}}){
+       if(selectedItem.componentId==this.leftContent.componentId){
+           this.leftSelectedItems.push(selectedItem.item);
+       }
+    }
+    
+    toggleLeftToRight(){
+        this.rightContent.listItems=JSON.parse(JSON.stringify(this.leftSelectedItems));
+    }
     
     
 

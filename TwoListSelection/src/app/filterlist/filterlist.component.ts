@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter,   Output } from '@angular/core';
 
 @Component({
   selector: 'app-filterlist',
@@ -6,19 +6,22 @@ import { Component, OnInit,Input,EventEmitter,Output } from '@angular/core';
   styleUrls: ['./filterlist.component.css']
 })
 export class FilterlistComponent implements OnInit {
- @Input() listContent:{label:string,listItems:{code:string;label:string;}[]};
-
+ @Input() listContent:{label:string,componentId:string,listItems:{code:string;label:string;}[]};
+ @Input() componentId:string;
  search:string;
-
-  @Output() onKeyWordChange = new EventEmitter<Object>();
-    
-    constructor() { }
+ @Output() onKeyWordChange = new EventEmitter<Object>();
+ @Output() onSelectedItem  =new EventEmitter<Object>();
+  
+ constructor() { }
 
   ngOnInit() {
   }
     
-    onChange($event){
-        this.onKeyWordChange.emit(this.search);
-    }
+ onKeyUp($event){
+     this.onKeyWordChange.emit(this.search);
+ }
+ onCheckboxChange(item,$event){
+ this.onSelectedItem.emit({"componentId":this.listContent.componentId,"item": item});
+ }
 
 }
