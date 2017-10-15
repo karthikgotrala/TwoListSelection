@@ -4,6 +4,10 @@
             <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" id="{{componentId}}_checkAll"> {{listContent.label}}
             </label>
+
+            <div *ngIf="showDelete" class="pull-right">
+                <button class="btn btn-danger" type="button" (click)=onDelete($event)><i class="fa fa-trash" aria-hidden="false"></i></button>
+            </div>
         </div>
     </div>
     <div class="form-group form-group-sm">

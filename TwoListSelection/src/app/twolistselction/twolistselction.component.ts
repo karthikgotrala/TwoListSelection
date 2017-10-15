@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls :  ['./twolistselction.component.css']
 })
 export class TwolistselctionComponent implements OnInit {
+    showDelete:boolean=true;
  leftContent = {
      'label'  :  'Available',
      'componentId':'Available',
@@ -27,6 +28,7 @@ export class TwolistselctionComponent implements OnInit {
  };
 
     leftSelectedItems=[];
+    rightSelectedItems=[];
     
 
 
@@ -46,11 +48,19 @@ export class TwolistselctionComponent implements OnInit {
     onSelectedItem(selectedItem:{"componentId":string,"item":{"label":string,"code":string}}){
        if(selectedItem.componentId==this.leftContent.componentId){
            this.leftSelectedItems.push(selectedItem.item);
+       }else if(selectedItem.componentId==this.rightContent.componentId){
+           this.rightSelectedItems.push(selectedItem.item);
        }
     }
     
     toggleLeftToRight(){
-        this.rightContent.listItems=JSON.parse(JSON.stringify(this.leftSelectedItems));
+    this.rightContent.listItems=JSON.parse(JSON.stringify(this.leftSelectedItems));
+    }
+    
+    onDeleteClicked(componentId:string){
+        alert("inside onDelete ClickedE");
+        console.log(componentId);
+        console.log("selected Items"+JSON.stringify(this.rightSelectedItems));
     }
     
     

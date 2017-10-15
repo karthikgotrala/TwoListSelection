@@ -14,7 +14,7 @@
         </div>
         <div class="col-xs-5 col-sm-5">
             <div class="right">
-                <app-filterlist [listContent]="rightContent"></app-filterlist>
+                <app-filterlist [listContent]="rightContent" (onSelectedItem)="onSelectedItem($event)" (onDeleteClicked)="onDeleteClicked($event)" [showDelete]="showDelete"></app-filterlist>
             </div>
         </div>
     </div>
