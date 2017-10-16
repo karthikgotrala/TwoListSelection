@@ -10,6 +10,7 @@ export class FilterlistComponent implements OnInit {
  search:string;
  @Output() onKeyWordChange = new EventEmitter<Object>();
  @Output() onSelectedItem  =new EventEmitter<Object>();
+ @Output() onUnselectItem =new EventEmitter<Object>(); 
  @Input("showDelete") showDelete:boolean;
  @Output() onDeleteClicked=new EventEmitter<string>();
  
@@ -23,8 +24,13 @@ export class FilterlistComponent implements OnInit {
      this.onKeyWordChange.emit(this.search);
  }
  onCheckboxChange(item,$event){
-this.onSelectedItem.emit({"componentId":this.listContent.componentId,"item": item});
+ 	var itemChecked=$event.currentTarget.checked;
+ 	if(itemChecked){
+    	this.onSelectedItem.emit({"componentId":this.listContent.componentId,"item": item});
+ 	}else{
+ 		this.onUnselectItem.emit({"componentId":this.listContent.componentId,"item":item});
  	
+ 	}
  }
     onDelete($event){
       

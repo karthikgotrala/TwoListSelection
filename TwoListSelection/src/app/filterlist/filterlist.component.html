@@ -18,8 +18,8 @@
 
         <ul class="list-inline" id="{{listContent.componentId}}_ul">
             <li class="list-group-item" *ngFor="let listItem of listContent.listItems |keywordsearch:'label':search">
-                <label for="{{listItem.code}}_checkbox">
-                    <input type="checkbox" id="{{listItem.code}}_checkbox" name="{{listItem.code}}_checkbox" (change)=onCheckboxChange(listItem,$event) /> {{listItem.label}}
+                <label for="{{listContent.componentId}}_{{listItem.code}}_checkbox">
+                    <input type="checkbox" id="{{listContent.componentId}}_{{listItem.code}}_checkbox" name="{{listContent.componentId}}_{{listItem.code}}_checkbox" (change)=onCheckboxChange(listItem,$event) /> {{listItem.label}}
                 </label>
 
             </li>

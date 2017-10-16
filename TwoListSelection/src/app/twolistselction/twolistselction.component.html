@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-xs-5 col-sm-5">
             <div class="left">
-                <app-filterlist [listContent]="leftContent" (onSelectedItem)="onSelectedItem($event)"></app-filterlist>
+                <app-filterlist [listContent]="leftContent" (onSelectedItem)="onSelectedItem($event)"
+                (onUnselectItem)="onUnSelect($event)"></app-filterlist>
             </div>
         </div>
         <div class="col-xs-2 col-sm-2">
@@ -14,7 +15,8 @@
         </div>
         <div class="col-xs-5 col-sm-5">
             <div class="right">
-                <app-filterlist [listContent]="rightContent" (onSelectedItem)="onSelectedItem($event)" (onDeleteClicked)="onDeleteClicked($event)" [showDelete]="showDelete"></app-filterlist>
+                <app-filterlist [listContent]="rightContent" (onSelectedItem)="onSelectedItem($event)" (onDeleteClicked)="onDeleteClicked($event)" [showDelete]="showDelete"
+                (onUnselectItem)="onUnSelect($event)"></app-filterlist>
             </div>
         </div>
     </div>

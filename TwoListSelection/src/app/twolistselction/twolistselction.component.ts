@@ -45,7 +45,9 @@ export class TwolistselctionComponent implements OnInit {
     
     
     
-    onSelectedItem(selectedItem:{"componentId":string,"item":{"label":string,"code":string}}){
+    onSelectedItem(selectedItem:{"componentId":string,
+                                  "item":{"label":string,"code":string}}){
+    
        if(selectedItem.componentId==this.leftContent.componentId){
            this.leftSelectedItems.push(selectedItem.item);
        }else if(selectedItem.componentId==this.rightContent.componentId){
@@ -63,6 +65,25 @@ export class TwolistselctionComponent implements OnInit {
         console.log("selected Items"+JSON.stringify(this.rightSelectedItems));
     }
     
-    
+    onUnselectItem(unSelected:{"componentId":string,
+                                "item":{"label":string,"code":string}}){
+      if (unSelected.componentId==this.rightContent.componentId) {
+          
+
+      }else if(unSelected.componentId==this.leftContent.componentId){
+
+      }
+
+
+    }
+
+    removeItemFromList(item:{"label":string,"code":string},items:{"label":string,"code":string}[],keyCode:string){
+      
+   /*    items.forEach((index,ele)=>{
+         if(ele[keyCode]==item[keyCode]){
+           items.splice(items,index,1);
+         }
+      });*/
+    }
 
 }
